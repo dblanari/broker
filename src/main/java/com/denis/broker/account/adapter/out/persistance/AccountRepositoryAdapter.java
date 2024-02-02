@@ -6,6 +6,9 @@ import com.denis.broker.account.applicaiton.port.out.LoadAccountPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 @RequiredArgsConstructor
 class AccountRepositoryAdapter implements CreateAccountPort, LoadAccountPort {
@@ -21,5 +24,13 @@ class AccountRepositoryAdapter implements CreateAccountPort, LoadAccountPort {
     @Override
     public Account loadAccount(Long accountId) {
         return accountMapper.toModel(accountRepository.getReferenceById(accountId));
+    }
+
+    @Override
+    public List<Account> loadAccounts() {
+        return accountRepository.findAll()
+                .stream()
+                .map(accountMapper::toModel)
+                .collect(Collectors.toList());
     }
 }

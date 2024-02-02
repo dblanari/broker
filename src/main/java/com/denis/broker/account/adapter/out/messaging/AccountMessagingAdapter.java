@@ -5,19 +5,14 @@ import com.denis.broker.account.applicaiton.port.out.MessageAccountPort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-@Service
+@Component
 @Slf4j
 public class AccountMessagingAdapter implements MessageAccountPort {
 
     private final JmsTemplate jmsTemplate;
-
-//    @Scheduled(fixedDelay = 5000)
-//    public void scheduleFixedDelayTask() {
-//        send("Fixed delay task - " + System.currentTimeMillis());
-//    }
 
     @Override
     public void sendAccount(Account account) {
