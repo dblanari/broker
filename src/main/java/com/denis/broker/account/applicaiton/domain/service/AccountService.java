@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class AccountService implements CreateUseCase, FetchUseCase {
+class AccountService implements CreateUseCase, FetchUseCase {
 
     private final CreateAccountPort createAccountPort;
     private final LoadAccountPort loadAccountPort;

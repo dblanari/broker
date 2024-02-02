@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @AllArgsConstructor
-public class AccountSchedulerAdapter {
+class AccountSchedulerAdapter {
 
     private NotificationUseCase notificationUseCase;
 

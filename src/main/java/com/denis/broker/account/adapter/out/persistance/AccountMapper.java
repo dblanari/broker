@@ -4,7 +4,7 @@ import com.denis.broker.account.applicaiton.domain.model.Account;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface AccountMapper {
+interface AccountMapper {
 
     AccountEntity toEntity(Account transaction);
 

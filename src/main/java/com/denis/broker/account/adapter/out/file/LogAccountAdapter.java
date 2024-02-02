@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @AllArgsConstructor
-public class LogAccountAdapter implements LogAccountPort {
+class LogAccountAdapter implements LogAccountPort {
 
     @Override
     public void logAccount(String account) {

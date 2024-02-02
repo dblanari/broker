@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class NotificationService implements NotificationUseCase {
+class NotificationService implements NotificationUseCase {
 
     private final LoadAccountPort loadAccountPort;
     private final MessageAccountPort messageAccountPort;
 
     @Override
     public void notifyAllAccounts() {
-        loadAccountPort.loadAccounts().forEach(messageAccountPort::sendAccount);
+        loadAccountPort.loadAccounts().forEach(messageAccountPort::sendNotification);
     }
 }

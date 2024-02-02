@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class LoggingService implements LoggingUseCase {
+class LoggingService implements LoggingUseCase {
 
     private final LogAccountPort logAccountPort;
 

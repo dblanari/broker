@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 @Slf4j
-public class AccountMessagingAdapter implements MessageAccountPort {
+class AccountMessagingAdapter implements MessageAccountPort {
 
     private final JmsTemplate jmsTemplate;
 
     @Override
-    public void sendAccount(Account account) {
+    public void sendNotification(Account account) {
         jmsTemplate.convertAndSend(account.getName());
         log.info("MessageSender sent: {}", account);
     }
